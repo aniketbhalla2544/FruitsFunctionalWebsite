@@ -121,9 +121,9 @@ body#homePage {
                             color: var(--txt-color);
                         }
 
-                        &:hover {
-                            color: $pink;
-                        }
+                        // &:hover {
+                        //     color: $pink;
+                        // }
 
                         @media (max-width: 768px) {
                             &:hover {

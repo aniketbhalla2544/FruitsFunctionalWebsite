@@ -52,6 +52,15 @@ p {
   font-size: 1rem;
 }
 
+.navitem-active {
+  background-color: var(--theme-white);
+  color: var(--theme-black) !important;
+  padding: 10px 22px;
+  border-radius: 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 body#homePage {
   position: relative;
 }
@@ -179,10 +188,6 @@ body#homePage header .flex-wrapper nav.header__nav .header__nav-link a {
 
 body#homePage header .flex-wrapper nav.header__nav .header__nav-link a:link, body#homePage header .flex-wrapper nav.header__nav .header__nav-link a:visited {
   color: var(--txt-color);
-}
-
-body#homePage header .flex-wrapper nav.header__nav .header__nav-link a:hover {
-  color: #db1f3e;
 }
 
 @media (max-width: 768px) {

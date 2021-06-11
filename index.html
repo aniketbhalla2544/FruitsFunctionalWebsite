@@ -45,8 +45,8 @@
             <nav class="header__nav nav-click">
 
                 <!-- nav link -->
-                <div class="header__nav-link">
-                    <a href="#">
+                <div class="header__nav-link ">
+                    <a href="#" class="navitem-active">
                         Home
                     </a>
                 </div>
@@ -85,7 +85,7 @@
 
     </header>
 
-    <!-- --------------------------------------------- main -------------------------------->
+    <!----------------------------------------------- main -------------------------------->
     <main>
 
         <section id="hero-sec" data-fruitname="apple">
@@ -161,6 +161,30 @@
             navbar.classList.toggle("nav-click");
             navbar.classList.toggle("nav-again-click");
         });
+
+    </script>
+
+    <!-- Navbar links script -->
+    <script defer>
+
+        const navLinks = $(".header__nav-link").children();
+
+
+        $.each(navLinks, function (key, navLinkObj) {
+
+            $(navLinkObj).css("transition", "all 400ms ease-in-out 0s");
+
+            $(navLinkObj).mouseover(e => {
+                $(e.target).addClass("navitem-active");
+            });
+
+            $(navLinkObj).mouseout(e => {
+                $(e.target).removeClass("navitem-active");
+            });
+
+        });
+
+
 
     </script>
 

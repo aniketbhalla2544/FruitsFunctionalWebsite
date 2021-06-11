@@ -59,3 +59,12 @@ p {
     letter-spacing: 1px;
     font-size: 1rem;
 }
+
+.navitem-active{
+    background-color: var(--theme-white);
+    color:  var(--theme-black) !important;
+    padding: 10px 22px;
+    border-radius: 1.5em;
+    text-decoration: none;
+    font-weight: bold;
+}
