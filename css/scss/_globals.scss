@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+html {
+    font-size: 16px;
+}
+
+:root{
+    --hero-sec-bg-color: #df2a57;
+    --hero-sec-rightPartBgcolor: #e13963;
+    --theme-white: #ffffff;
+    --theme-black: #252121;
+    --fruit-name: "Apple";
+
+    --demo: #ffcd17;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$pink: rgb(219, 31, 62);
+$theme-black: rgb(37, 33, 33);
+$theme-black--light: rgb(46, 46, 46);
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    list-style-type: none;
+}
+
+p {
+    line-height: 1.7;
+}
+
+// helper classes
+.grid-center {
+    display: grid;
+    place-items: center;
+}
+
+.btn--basic{
+    // border: 2px solid black;
+    background-color: var(--theme-white);
+    color:  var(--theme-black);
+    display: inline-block;
+    margin-top: 2.5em;
+    padding: 10px 22px;
+    border-radius: 1.5em;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}

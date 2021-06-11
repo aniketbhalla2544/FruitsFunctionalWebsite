@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- my css -->
+    <link rel="stylesheet" href="./css/index.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+    <title>Jaspreet Singh Gharial | Fruits Website</title>
+</head>
+
+<body id="homePage">
+
+    <!-- --------------------------------------------- header -------------------------------->
+    <header>
+
+        <div class="flex-wrapper">
+
+            <div class="header__logo">
+
+                <h1 class="text-md-left">
+                    <span>Fruits</span>
+                </h1>
+
+                <!-- hamburger -->
+                <span class="hamBurger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </span>
+            </div>
+
+            <nav class="header__nav nav-click">
+
+                <!-- nav link -->
+                <div class="header__nav-link">
+                    <a href="#">
+                        Home
+                    </a>
+                </div>
+
+                <!-- nav link -->
+                <div class="header__nav-link">
+                    <a href="#">
+                        About
+                    </a>
+                </div>
+
+                <!-- nav link -->
+                <div class="header__nav-link">
+                    <a href="#">
+                        Register
+                    </a>
+                </div>
+
+                <!-- nav link -->
+                <div class="header__nav-link">
+                    <a href="#">
+                        Customers
+                    </a>
+                </div>
+
+                <!-- nav link -->
+                <div class="header__nav-link">
+                    <a href="#">
+                        Offers
+                    </a>
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- --------------------------------------------- main -------------------------------->
+    <main>
+
+        <section id="hero-sec" data-fruitname="apple">
+            <div class="container">
+
+                <!-- upper grid  -->
+                <ul class="hero-sec__grid-box">
+
+                    <li>
+                        <h1 class="hero-sec__hero-heading text-capitalize">
+                            eat fresh<br>everyday
+                        </h1>
+                        <p class="m-0 hero-sec__hero-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem
+                            repudiandae eius
+                            adipisci necessitatibus, numquam sit quo asperiores aspernatur? Quidem dolor culpa
+                            voluptatem modi sapiente numquam sequi deserunt cumque, quasi ea eligendi tempora esse
+                            pariatur nulla iure laboriosam saepe rerum! Ratione.</p>
+
+                        <a class="btn--basic text-capitalize" href="#">learn more</a>
+                    </li>
+
+                    <li class="hero-sec__img-box">
+                        <img class="hero-sec__hero-img" src="./images/apple.png" alt="">
+                    </li>
+
+                </ul>
+
+                <ul class="fruit-options_grid-box">
+
+                    <li class="grid-center">
+                        <img data-imgFruitName='Apple' data-bgColor="#df2a57" data-rightPartBgcolor='#e13963'
+                            src="./images/apple.png" alt="" class="fruit-options_fruit">
+                    </li>
+
+                    <li class="grid-center">
+                        <img data-imgFruitName='Mango' data-bgColor="#feb705" data-rightPartBgcolor='hsl(43, 100%, 54%)'
+                            src="./images/mango.png" alt="" class="fruit-options_fruit">
+                    </li>
+
+                    <li class="grid-center">
+                        <img data-imgFruitName='Dragon Fruit' data-bgColor="#d70e66" data-rightPartBgcolor='#d61b6c'
+                            src="./images/dragonFruit.png" alt="" class="fruit-options_fruit">
+                    </li>
+
+                    <li class="grid-center">
+                        <img data-imgFruitName='Pine Apple' data-bgColor="#fec700" data-rightPartBgcolor='#ffcd17'
+                            src="./images/pineApple.png" alt="" class="fruit-options_fruit">
+                    </li>
+
+                    <li class="grid-center">
+                        <img data-imgFruitName='Water Melon' data-bgColor="#415F00" data-rightPartBgcolor='#476800'
+                            src="./images/watermelon.png" alt="" class="fruit-options_fruit">
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!------------------------------------------------ footer -------------------------------->
+    <footer>
+
+    </footer>
+
+    <!-- Navbar script -->
+    <script defer>
+
+        const hamBurger = document.querySelector(".hamBurger");
+        const navbar = document.querySelector(".header__nav");
+
+        hamBurger.addEventListener('click', function () {
+            navbar.classList.toggle("nav-click");
+            navbar.classList.toggle("nav-again-click");
+        });
+
+    </script>
+
+    <!-- fruit options script -->
+    <script defer>
+
+        $(document).ready(function () {
+
+            const root = document.querySelector(':root');
+
+            $("ul.fruit-options_grid-box > li").click(function () {
+
+                // fruit name
+                const imgFruitName = $(this).children().attr("data-imgFruitName");
+
+                $("#hero-sec").attr("data-fruitname", imgFruitName);
+
+                // data bg color | hero section main color
+                const dataBgColor = $(this).children().attr("data-bgColor");
+
+                $("#hero-sec").css("background-color", dataBgColor);
+
+                // right part color
+                const rightPartBgColor = $(this).children().attr("data-rightPartBgcolor");
+                root.style.setProperty('--hero-sec-rightPartBgcolor', rightPartBgColor);
+
+                // image srcs
+                const src = $(this).children().attr("src");
+
+                $(".hero-sec__hero-img").attr("src", src);
+            });
+
+        });
+
+    </script>
+
+    <!-- bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

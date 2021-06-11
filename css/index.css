@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+html {
+  font-size: 16px;
+}
+
+:root {
+  --hero-sec-bg-color: #df2a57;
+  --hero-sec-rightPartBgcolor: #e13963;
+  --theme-white: #ffffff;
+  --theme-black: #252121;
+  --fruit-name: "Apple";
+  --demo: #ffcd17;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  list-style-type: none;
+}
+
+p {
+  line-height: 1.7;
+}
+
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+
+.btn--basic {
+  background-color: var(--theme-white);
+  color: var(--theme-black);
+  display: inline-block;
+  margin-top: 2.5em;
+  padding: 10px 22px;
+  border-radius: 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+body#homePage {
+  position: relative;
+}
+
+body#homePage header {
+  padding: 1.6em 4em;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  --txt-color: white;
+}
+
+body#homePage header .flex-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+
+@media (max-width: 768px) {
+  body#homePage header .flex-wrapper {
+    display: block;
+  }
+}
+
+body#homePage header .flex-wrapper .header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  body#homePage header .flex-wrapper .header__logo {
+    justify-content: space-between;
+    margin-bottom: 4em;
+  }
+}
+
+body#homePage header .flex-wrapper .header__logo .hamBurger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body#homePage header .flex-wrapper .header__logo .hamBurger {
+    display: block;
+  }
+}
+
+body#homePage header .flex-wrapper .header__logo .hamBurger:hover {
+  cursor: pointer;
+  outline: 1px solid white;
+  outline-offset: 10px;
+}
+
+body#homePage header .flex-wrapper .header__logo .hamBurger > div {
+  width: 35px;
+  height: 5px;
+  background-color: #db1f3e;
+  margin: 6px 0;
+}
+
+body#homePage header .flex-wrapper .header__logo h1 {
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 0;
+  color: var(--txt-color);
+}
+
+body#homePage header .flex-wrapper .nav-again-click {
+  display: block;
+}
+
+body#homePage header .flex-wrapper .nav-click {
+  display: none;
+}
+
+body#homePage header .flex-wrapper nav.header__nav {
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  gap: 0 3rem;
+}
+
+@media (max-width: 1000px) {
+  body#homePage header .flex-wrapper nav.header__nav {
+    gap: 0 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body#homePage header .flex-wrapper nav.header__nav {
+    display: flex;
+  }
+}
+
+body#homePage header .flex-wrapper nav.header__nav .header__nav-link {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  body#homePage header .flex-wrapper nav.header__nav .header__nav-link {
+    margin-bottom: 1em;
+    padding: 1em 2em;
+    position: relative;
+  }
+  body#homePage header .flex-wrapper nav.header__nav .header__nav-link::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 60%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    background-color: #db1f3e;
+  }
+}
+
+body#homePage header .flex-wrapper nav.header__nav .header__nav-link a {
+  text-decoration: none;
+}
+
+body#homePage header .flex-wrapper nav.header__nav .header__nav-link a:link, body#homePage header .flex-wrapper nav.header__nav .header__nav-link a:visited {
+  color: var(--txt-color);
+}
+
+body#homePage header .flex-wrapper nav.header__nav .header__nav-link a:hover {
+  color: #db1f3e;
+}
+
+@media (max-width: 768px) {
+  body#homePage header .flex-wrapper nav.header__nav .header__nav-link a:hover {
+    text-decoration: underline;
+  }
+}
+
+body#homePage main section#hero-sec {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: var(--theme-white);
+  background-color: var(--hero-sec-bg-color);
+  position: relative;
+}
+
+body#homePage main section#hero-sec ul {
+  padding: 0;
+}
+
+body#homePage main section#hero-sec::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: inline-block;
+  width: 20vw;
+  z-index: 5;
+  background-color: var(--hero-sec-rightPartBgcolor);
+}
+
+body#homePage main section#hero-sec::before {
+  text-transform: capitalize;
+  content: attr(data-fruitname) " ";
+  position: absolute;
+  left: 32vw;
+  bottom: 22vh;
+  font-size: 5rem;
+  z-index: 20;
+  font-weight: bolder;
+  color: black;
+  mix-blend-mode: soft-light;
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+}
+
+body#homePage main section#hero-sec ul.hero-sec__grid-box {
+  display: grid;
+  grid-template-columns: clamp(200px, 55%, 800px) 1fr;
+  grid-template-rows: auto;
+  margin-bottom: 1em;
+}
+
+body#homePage main section#hero-sec ul.hero-sec__grid-box h1.hero-sec__hero-heading {
+  font-size: 4rem;
+  margin-bottom: 0.3em;
+  letter-spacing: 3px;
+}
+
+body#homePage main section#hero-sec ul.hero-sec__grid-box .hero-sec__img-box {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+body#homePage main section#hero-sec ul.hero-sec__grid-box .hero-sec__img-box img.hero-sec__hero-img {
+  z-index: 10;
+  width: 400px;
+  aspect-ratio: 1/1;
+}
+
+@keyframes rtl {
+  from {
+    right: -800px;
+    transform: scale(0.5);
+    opacity: 0.2;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+body#homePage main section#hero-sec ul.fruit-options_grid-box {
+  margin-bottom: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 5vh;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: inline-flex;
+  gap: 0 40px;
+}
+
+body#homePage main section#hero-sec ul.fruit-options_grid-box > li {
+  position: relative;
+  padding: 14px;
+  transform: scale(0.85);
+  transition: transform 300ms ease 0s;
+}
+
+body#homePage main section#hero-sec ul.fruit-options_grid-box > li:hover {
+  outline: 1px solid white;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+body#homePage main section#hero-sec ul.fruit-options_grid-box > li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.11);
+  backdrop-filter: blur(0);
+}
+
+body#homePage main section#hero-sec ul.fruit-options_grid-box img.fruit-options_fruit {
+  width: 35px;
+  aspect-ratio: 1/1;
+  z-index: 20;
+  position: relative;
+}
+/*# sourceMappingURL=index.css.map */
